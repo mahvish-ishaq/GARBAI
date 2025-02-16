@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classify Waste - GarbAI</title>
+    <link rel="stylesheet" href="classify.css">
+</head>
+<body>
+    <header>
+        <h1>Classify Waste</h1>
+        <p>Upload an image of waste to know its category and get disposal recommendations.</p>
+    </header>
+	<nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="stats.html">Impact Statistics</a></li>
+            <li><a href="learn.html">Learn</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form id="uploadForm" action="/classify" method="POST" enctype="multipart/form-data">
+            <label for="fileInput">Upload Waste Image:</label>
+            <input type="file" id="fileInput" name="image" required>
+            <button type="submit">Classify</button>
+        </form>
+        <div id="result"></div>
+    </main>
+   
+    <script>
+        /*document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const response = await fetch('/classify', { method: 'POST', body: formData });
+            const result = await response.json();
+            document.getElementById('result').innerHTML = `<p>Classification: ${result.category}</p><p>Recommendation: ${result.recommendation}</p>`;
+        });*/
+		
+        document.getElementById("upload-form").addEventListener("submit", async function (event) {
+            event.preventDefault();
+            
+            let formData = new FormData();
+            formData.append("file", document.getElementById("image-input").files[0]);
+
+            let response = await fetch("http://127.0.0.1:5000/classify", {
+                method: "POST",
+                body: formData
+            });
+
+            let result = await response.json();
+            document.getElementById("result").innerHTML = `<h3>Predicted Category: ${result.category}</h3>`;
+
+            let imageElement = document.getElementById("uploaded-image");
+            let file = document.getElementById("image-input").files[0];
+            imageElement.src = URL.createObjectURL(file);
+            imageElement.style.display = "block";
+        });
+    </script>
+   
+</body>
+</html>

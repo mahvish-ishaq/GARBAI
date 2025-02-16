@@ -1,0 +1,59 @@
+/* Impact Statistics Page Styles */
+body {
+	background-image: url("bg2.jpeg"); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the background */
+    background-repeat: no-repeat; /* Prevents tiling */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: black; 
+}
+
+header {
+    background-color: #1E90FF; /* Bright Blue */
+    border-bottom: 5px solid #FFA500;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #FFA500;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #FF4500;
+}
+
+main {
+    background-color: #E0F7FA; /* Light Cyan Background */
+}
+
+section h2 {
+    color: #32CD32; /* Lime Green */
+}
+
+section ul li {
+    background-color: #B3E5FC; /* Light Blue */
+    border-left: 5px solid #1E90FF;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
