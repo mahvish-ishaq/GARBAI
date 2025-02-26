@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Statistics - GarbAI</title>
+    <link rel="stylesheet" href="stats.css">
+</head>
+<body>
+    <header>
+        <h1>Impact Statistics</h1>
+        <p>See the difference you’re making with GarbAI!</p>
+    </header>
+	<nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="classify.html">Classify Waste</a></li>
+            <li><a href="learn.html">Learn</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Environmental Impact</h2>
+            <p>Waste sorted using GarbAI has reduced landfill contribution by 85% and increased recycling efficiency by 90%.</p>
+        </section>
+        <section>
+            <h2>User Contributions</h2>
+            <ul>
+                <li>Total Waste Classified: <span id="totalWaste">0</span> items</li>
+                <li>Recyclables Recovered: <span id="recyclables">0</span> items</li>
+                <li>Organic Waste Processed: <span id="organicWaste">0</span> items</li>
+            </ul>
+        </section>
+    </main>
+    
+    <script>
+        // Example data fetch (replace with backend call)
+        const stats = { totalWaste: 1200, recyclables: 450, organicWaste: 750 };
+
+        document.getElementById('totalWaste').innerText = stats.totalWaste;
+        document.getElementById('recyclables').innerText = stats.recyclables;
+        document.getElementById('organicWaste').innerText = stats.organicWaste;
+    </script>
+</body>
+</html>
