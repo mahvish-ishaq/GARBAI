@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - GARBAI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            /*background-color: lightgreen;*/ /* Set overall background to grey */
+			background-image: url("{{ url_for('static', filename='bg.jpeg') }}");
+			background-size: cover; /* Cover the entire viewport */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .team-section {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 20px;
+            background: linear-gradient(135deg, green, green);
+            color: #fff;
+            border-radius: 10px;
+        }
+        .team-section h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            color: #ffd700;
+        }
+        .team-section p {
+            font-size: 18px;
+        }
+        .team-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: nowrap; /* Keeps all members in one row */
+            margin-top: 30px;
+        }
+        .team-member {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            width: 220px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .team-member img {
+            width: 100%;
+            height: 75%;
+            border-radius: 50%;
+            border: 4px solid #4e4376;
+            margin-bottom: 15px;
+        }
+        .team-member h3 {
+            font-size: 20px;
+            color: #333;
+            margin: 5px 0;
+        }
+        .team-member p {
+            font-size: 16px;
+            color: #555;
+            margin: 0;
+        }
+       .contact-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin-top: 40px;
+            border-radius: 10px;
+        }
+        .contact-section h2 {
+            color: #ffd700;
+        }
+        .contact-section p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="team-section">
+        <h1>Our Team</h1>
+        <p>Meet the Sustainable Minds Behind GARBAI – AI for a Cleaner Tomorrow!</p>
+        <div class="team-grid">
+            <!-- Team Member 1 -->
+	       <div class="team-member">
+                <img src="{{ url_for('static', filename='Mahvish photo.jpeg') }}" alt="Mahvish Ishaq">
+                <h3>Mahvish Ishaq</h3>
+                <p>ID: 2103A51473</p>
+            </div>
+            <!-- Team Member 2 -->
+	    <div class="team-member">
+                <img src="{{ url_for('static', filename='deekshitha photo.jpeg') }}" alt="Sri Deekshitha Devarakonda">
+                <h3>Sri Deekshitha Devarakonda</h3>
+                <p>ID: 2103A51456</p>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='jashvitha photo.jpg') }}" alt="Chiluka Jashvitha">
+                <h3>Chiluka Jashvitha</h3>
+                <p>ID: 2103A51362</p>
+            </div>
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='sampurna photo.jpeg') }}" alt="Malyala Sampurna">
+                <h3>Malyala Sampurna</h3>
+                <p>ID: 2103A51274</p>
+            </div>
+			<!-- Team Member 5 -->
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='suhani photo.jpeg') }}" alt="Kusuma Suhani">
+                <h3>Kusuma Suhani</h3>
+                <p>ID: 2103A51269</p>
+            </div>
+        </div>
+    </div>
+
+   <div class="contact-section">
+        <h2>Contact Us</h2>
+	<p>Email: <a href="mailto:2103a51473@sru.edu.in" style="color: #ffd700;">2103a51473@sru.edu.in</a> Mahvish Ishaq</p>
+	<p>Phone: <a href="tel:+91 70321 25036" style="color: #ffd700;">+91 70321 25036</a></p>
+    </div>
+</div>
+
+</body>
+</html>

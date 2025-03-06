@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Statistics - GarbAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stats.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Impact Statistics</h1>
+        <p>See the difference you’re making with GarbAI!</p>
+    </header>
+	<nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('classify') }}">Classify Waste</a></li>
+            <li><a href="{{ url_for('learn') }}">Learn</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Environmental Impact</h2>
+            <p>Waste sorted using GARBAI has reduced landfill contribution by 85% and increased recycling efficiency by 90%.</p>
+        </section>
+        <section>
+            <h2>User Contributions</h2>
+            <ul>
+                <li>Total Waste Classified: <span id="totalWaste">0</span> items</li>
+                <li>Recyclables Recovered: <span id="recyclables">0</span> items</li>
+                <li>Non Recyclables Disposed: <span id="nonRecyclables">0</span> items</li>
+            </ul>
+        </section>
+    </main>
+    
+    <script>
+        // Example data fetch (replace with backend call)
+        const stats = { totalWaste: 1200, recyclables: 800, nonRecyclables: 400 };
+
+        document.getElementById('totalWaste').innerText = stats.totalWaste;
+        document.getElementById('recyclables').innerText = stats.recyclables;
+        document.getElementById('nonRecyclables').innerText = stats.nonRecyclables;
+    </script>
+</body>
+</html>

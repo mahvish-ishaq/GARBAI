@@ -1,0 +1,175 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FAFAFA;
+    color: #333333;
+    line-height: 1.6;
+	background-image: url("bg1.jpg"); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the background */
+    background-repeat: no-repeat; /* Prevents tiling */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: black; /* Ensures text is visible on the background */
+}
+
+header {
+    background-color: #adcd60;
+    color: #3d692d;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 5px solid #afe03b;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px #006400;
+}
+
+header p {
+    font-size: 1.3em;
+	
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #afe03b;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #709c06;
+}
+
+main {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background: #adcd60;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation Bar */
+nav {
+    background: green;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#Login & Signup Buttons 
+.nav-auth {
+    display: flex;
+    align-items: center;
+    
+}
+
+.nav-auth a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    background: #afe03b;
+}
+/*
+.login-btn {
+    background: #4CAF50;
+}
+
+.signup-btn {
+    background: #4CAF50;
+}
+*/
+.nav-auth a:hover {
+    opacity: 0.8;
+    background-color: #709c06;
+}
+
+/*
+#Login & Signup Forms 
+.container {
+    background: white;
+    width: 350px;
+    padding: 20px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+form input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e68900;
+}
+
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #ff9800;
+    text-decoration: none;
+}
+*/

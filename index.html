@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GARBAI - AI FOR A CLEANER TOMORROW</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>GARBAI</h1>
+		<p>AI for a Cleaner Tomorrow</p>
+        <p>Sorting the Waste, Sustaining the Planet !</p>
+    </header>
+
+    <!-- Navigation Menu --> 
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('classify') }}">Classify Waste</a></li>
+            <li><a href="{{ url_for('stats') }}">Impact Statistics</a></li>
+            <li><a href="{{ url_for('learn') }}">Learn</a></li>
+        </ul>
+		
+        <div class="nav-auth">
+			<a href="{{ url_for('ourteam') }}">Our Team</a>
+        </div> 
+   
+    </nav>
+
+    <main>
+        <h2>Welcome to GARBAI</h2>
+        <p>GARBAI is your smart assistant for waste management. With AI-driven technology, we aim to simplify waste segregation, track environmental impact, and educate users on sustainable practices.</p>
+
+        <section>
+            <h3>Why Choose GARBAI?</h3>
+            <ul>
+                <li><strong>Accurate Waste Classification:</strong> Leverages neural networks for precise sorting.</li>
+                <li><strong>Environmental Impact Statistics:</strong> Track your contribution to a cleaner planet.</li>
+                <li><strong>Learn Sustainability:</strong> Access educational resources for a greener future.</li>
+            </ul>
+        </section>
+    </main>
+
+    
+</body>
+</html>
+
+

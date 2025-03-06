@@ -1,0 +1,155 @@
+		
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classify Waste</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='classify.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Classify Waste</h1>
+        <p>Upload an image of waste to know its category and get disposal recommendations.</p>
+    </header>
+
+    <!-- File Upload Box with Classify Button -->
+    <div class="file-upload-box">
+        <input type="file" id="imageInput" accept="image/*" onchange="previewImage()">
+        <button onclick="uploadImage()">Classify</button>
+    </div>
+
+    <!-- Image Preview -->
+    <img id="imagePreview" src="" alt="Image Preview">
+
+    <!-- Classification Result -->
+    <h3 id="classification-result"></h3>
+
+    <div class="classification-container">
+        <div class="category-box" id="recycling">
+            <h2>Send for Recycling</h2>
+            <ul>
+                <li>Plastic Materials</li>
+                <li>Newspaper</li>
+                <li>Glass Items</li>
+                <li>Metal/Aluminum Items</li>
+                <li>Cardboard</li>
+            </ul>
+        </div>
+        <div class="category-box" id="landfill">
+            <h2>Send to Landfill</h2>
+            <ul>
+                <li>Styrofoam Materials</li>
+                <li>Other Non-Recyclable Trash</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+   <!-- <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Prediction Result</h2>
+            <p id="popup-result">Processing...</p>
+        </div>
+    </div>-->
+    <div id="classification-result" class="classification-box"></div>
+
+    <div id="popup" class="popup">
+        <div id="popup-result"></div>
+    </div>
+    
+    <script>
+        function previewImage() {
+            let fileInput = document.getElementById("imageInput");
+            let imagePreview = document.getElementById("imagePreview");
+            let file = fileInput.files[0];
+
+            if (file) {
+                let reader = new FileReader();
+                reader.onload = function (e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.style.display = "none";
+            }
+        }
+
+        function uploadImage() {
+            let fileInput = document.getElementById("imageInput");
+            let file = fileInput.files[0];
+
+            if (!file) {
+                alert("Please select an image to classify!");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", file);
+
+            fetch("/upload", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        showPopup("Error: " + data.error);
+                    } else {
+                        let predictedCategory = data.prediction;
+                        classifyWaste(predictedCategory);
+                    }
+                })
+                .catch(error => {
+                    showPopup("Error: " + error);
+                });
+        }
+
+        function classifyWaste(predictedCategory) {
+            let messageElement = document.getElementById("classification-result");
+            const recyclableCategories = ["Plastic", "Paper", "Glass", "Metal", "Cardboard"];
+            const landfillCategories = ["Trash", "Styrofoam"];
+            let message = "";
+
+            if (recyclableCategories.includes(predictedCategory)) {
+                message = `Predicted Category: ${predictedCategory} - Send this waste for Recycling.`;
+                messageElement.style.color = "yellow";
+            } else if (landfillCategories.includes(predictedCategory)) {
+                message = `Predicted Category: ${predictedCategory} - Send this waste to Landfill.`;
+                messageElement.style.color = "lightgreen";
+            } else {
+                message = "Unknown waste category.";
+                messageElement.style.color = "black";
+            }
+
+            messageElement.innerText = message;
+            showPopup(message);
+        }
+
+        function showPopup(message) {
+            document.getElementById("popup-result").innerText = message;
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+    <script src="{{ url_for('static', filename='classify.js') }}"></script>
+
+</body>
+
+</html>
+
+		
+		
+		
+		
+		
+		
+		
+		
+		

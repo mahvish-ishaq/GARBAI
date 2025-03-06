@@ -1,0 +1,279 @@
+/* Classify Waste Page Styles */
+body {
+	background-image: url("bg1.jpg"); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the background */
+    background-repeat: no-repeat; /* Prevents tiling */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: green; 
+}
+header {
+    background-color: #adcd60; /* Bright Orange */
+    border-bottom: 5px solid #adcd60;
+    padding: 20px;
+    text-align: center;
+}
+header h2 {
+    color: white;
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #afe03b;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color:  #709c06;
+}
+
+
+main {
+    background-color: #FFF8E7; /* Soft Orange Background */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background: #adcd60;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.file-upload-box {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid #4CAF50; /* Green border */
+    background-color: #ffffff; /* White background */
+    padding: 5px;
+    border-radius: 8px;
+}
+
+input[type="file"] {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+button {
+    font-size: 16px;
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/*
+form label {
+    font-size: 1.3em;
+    color: #FF4500; /* Bright Red-Orange 
+}
+
+form button {
+    background-color: #32CD32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #228B22; /* Forest Green 
+}*/
+/* Increase image preview size */
+#imagePreview {
+    display: block;
+    max-width: 100%;  /* Adjust width dynamically */
+    width: 400px;     /* Set a larger width */
+    height: auto;     /* Maintain aspect ratio */
+    margin-top: 10px;
+    border: 3px solid black;  /* Optional: Add a border for better visibility */
+    border-radius: 5px;
+}
+
+/* Improve classification result visibility */
+#classification-result {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+    color: yellow; /* Make text stand out */
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block; /* Keep it compact */
+    margin-top: 10px;
+}
+
+/*
+#imagePreview {
+    width: auto;  
+    height: auto;  
+    max-height: 150px;  
+    border: 2px solid #333; 
+    border-radius: 8px;  
+    display: none; 
+    object-fit: contain; 
+}
+*/
+#result {
+    color: red; /* Bright Blue */
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 1.3em;
+}
+.classification-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    position: fixed;  /* Keeps it in place */
+    left: 50%;  /* Move to the center */
+    transform: translateX(-50%);  /* Center it perfectly */
+    top: 150px;  /* Adjust vertical positioning */
+    width: 800px; /* Ensures both boxes fit properly */
+    text-align: center;  /* Centers text inside */   
+    align-items: flex-start; /* Ensures both boxes align at the top */ 
+    
+}
+
+.category-box {
+    width: 250px;  /* Same width for both */
+    height: 300px; /* Increased height to match longer content */
+    text-align: center;
+    background-color: #adcd60;
+    padding: 10px;
+    font-size: 16px; /* Better readability */
+    border-radius: 15px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns text at the top */
+    align-items: center;
+   
+}
+
+.category-box h2 {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    
+}
+
+ul li {
+    background: #afe03b;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Popup Modal */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+        position: fixed;
+        top: 10px;  /* Moves popup to the top */
+        left: 50%;
+        transform: translateX(-50%); /* Centers it horizontally */
+        background-color: lightgray;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+    
+    
+}
+.classification-box {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: yellow;
+    padding: 8px 12px;  /* Adjust padding */
+    font-size: 26px;  /* Bigger text */
+    font-weight: bold;
+    border-radius: 8px;
+    display: none; /* Initially hidden */
+    max-width: 300px; /* Restrict width */
+    text-align: center; /* Center text */
+    word-wrap: break-word; /* Wrap text */
+}
+
+
+.popup {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border: 2px solid black;
+    padding: 15px;
+    box-shadow: 2px 2px 10px gray;
+    display: none; /* Initially hidden */
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.popup-content {
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-btn:hover {
+    color: black;
+}
